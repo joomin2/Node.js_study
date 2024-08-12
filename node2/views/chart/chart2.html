@@ -1,0 +1,77 @@
+<style>
+  #container {
+    width: 700px;
+    height: 400px;
+    border: 1px solid red;
+  }
+</style>
+
+<script>
+  function displayChart() {
+
+    Highcharts.chart('container', {
+      chart: {
+        type: 'pie',
+        options3d: {
+          enabled: true,
+          alpha: 45
+        }
+      },
+      title: {
+        text: 'Beijing 2022 gold medals by country',
+        align: 'left'
+      },
+      subtitle: {
+        text: '3D donut in Highcharts',
+        align: 'left'
+      },
+      plotOptions: {
+        pie: {
+          innerSize: 100,
+          depth: 45
+        }
+      },
+      series: [{
+        name: 'Medals',
+        data: [
+          ['Norway', 16],
+          ['Korea', 20],
+          ['USA', 1],
+          ['Sweden', 1],
+          ['Netherlands', 1],
+          ['ROC', 1],
+          ['Austria', 1],
+          ['Canada', 2],
+          ['Japan', 1]
+
+        ]
+      }]
+    });
+
+  };
+
+  $(document).ready(function () {
+    displayChart();
+  });   
+</script>
+<div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-sm-3">
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="/chart/chart1">chart1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/chart/chart2">chart2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/chart/chart3">chart3</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-9">
+      <h2>CHART CENTER 이것은 차트 폴더의 차트html</h2>
+      <div id="container"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .menu-item {
+            margin-bottom: 30px;
+        }
+        .menu-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .menu-name {
+            font-size: 18px;
+            color: #555;
+        }
+        .menu-price {
+            font-size: 18px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Menu Items</h1>
+        <% menus.forEach(function(menu) { %>
+            <div class="menu-item">
+                <p class="menu-name"><%= menu.메뉴명 %></p>
+                <p class="menu-price"><%= menu.price %> 원</p>
+                <img src="/img/<%= menu.image %>" alt="<%= menu.메뉴명 %>">
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>
