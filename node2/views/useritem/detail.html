@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Detail</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .bg-success,
+        .bg-warning {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="margin-top:30px">
+        <div class="row">
+            <div class="col-sm-3">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/useritem">Select</a>
+                    </li>
+                    {% if loginid %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/useritem/cart">Cart</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <h2>Item Detail</h2>
+                <div class="row">
+                    <div class="col-5 bg-success">
+                        <img src="/img/{{item.imgname}}" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                    <div class="col-7 bg-warning">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Item Information</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 
+                                <tr>
+                                    <td>상품 ID : {{item.id}}</td>
+                                </tr>
+                                <tr>
+                                    <td>상품명: {{item.name}}</td>
+                                </tr>
+                                <tr>
+                                    <td>상품 가격 : {{item.price}}</td>
+                                </tr>
+                                <tr>
+                                    <td>상품 등록일 : {{item.regdate}}</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <form action="/useritem/addcart" method="POST">
+                                            <div class="form-group">
+                                                <label for="sel1">Count:</label>
+                                                <select class="form-control" id="sel1" name="count">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                            {% if loginid %}
+                                            <input type = "hidden" name="userid" value = "{{l}}">
+                                            <input type = "hidden" name="itemid" value = "{{item.id}}">
+                                    </td>
+                                </tr>
+                              
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

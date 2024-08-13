@@ -3,7 +3,7 @@ var db_sql = require('../db/db_sql');
 
 
 conn = db_connect.getConnection();
-
+//db_connect안에 있는getConnection()메서드(함수) 사용
 let id = 'id06';
 let pwd = 'pwd04';
 let name = '도라에몽';

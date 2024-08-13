@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* CSS 스타일 추가 */
+        .table thead th {
+            background-color: black;
+            color: white;
+        }
+
+        #item_img {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="margin-top:30px">
+        <div class="row">
+            <div class="col-sm-3">
+                <h2>Item Center</h2>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/useritem">Select</a>
+                    </li>
+                    {% if loginid != null %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/useritem/cart">Cart</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <h2>user_item1 HTML 페이지 입니다</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>RegDate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in items %}
+                        <tr>
+                            <td><a href="/useritem/detail?id={{i.id}}"><img src="/img/{{ i.imgname }}" id="item_img" alt="Item Image"></a></td>
+                            <td>{{ i.id }}</td>
+                            <td>{{ i.name }}</td>
+                            <td>{{ i.price }}</td>
+                            <td>{{ i.regdate }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -9,12 +9,12 @@ var db_connect = require('../db/db_connect');
 var db_sql = require('../db/db_sql');
 
 // My Util
-//var goto = require('../util/goto');
+var goto = require('../util/goto');
 
 // /block
 router
     .get('/', (req, res) => {
-        res.render('index', { 'centerpage': 'item/center' });
+        goto.go(req, res, { 'centerpage': 'item/center' });
     })
     .get('/item1', (req, res) => {
         conn = db_connect.getConnection();
@@ -28,7 +28,7 @@ router
 
                 } else {
                     console.log(result);
-                    res.render('index', { 'centerpage': 'item/item1', 'items': result })
+                    goto.go(req, res, { 'centerpage': 'item/item1', 'items': result })
                 }
             } catch {
                 console.log(e);
@@ -40,10 +40,10 @@ router
 
     })
     .get('/item2', (req, res) => {
-        res.render('index', { 'centerpage': 'item/item2' });
+        goto.go(req, res, { 'centerpage': 'item/item2' });
     })
     .get('/item3', (req, res) => {
-        res.render('index', { 'centerpage': 'item/item3' });
+        goto.go(req, res, { 'centerpage': 'item/item3' });
     });
 
 module.exports = router;

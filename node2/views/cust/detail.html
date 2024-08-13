@@ -22,8 +22,9 @@
                 </div>
                 <button type="submit" class="btn btn-primary">UPDATE</button>
             </form>
+            {% if loginid == null %}
             <a href="/cust/deleteimpl?id={{cust.id}}" class="btn btn-info" role="button">Delete</a>
-            
+            {% endif %}
         </div>
     </div>
 </div>
