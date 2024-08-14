@@ -1,3 +1,4 @@
+//MySQL_DB와 통신하는 Query문 
 module.exports = {
     cust_select:'SELECT * FROM cust',
     cust_select_one:'SELECT * FROM cust WHERE id = ?',

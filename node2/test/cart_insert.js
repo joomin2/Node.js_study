@@ -5,12 +5,9 @@ conn = db_connect.getConnection();
 
 
 
-let id = 'id99';
-let itemid = '11';
-let count = '1';
-
-
-
+let id = 'example_id';
+let itemid = 'example_itemid';
+let count = 'example_count';
 
 let values = [itemid];
 

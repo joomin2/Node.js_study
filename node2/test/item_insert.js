@@ -4,9 +4,9 @@ var db_sql = require('../db/db_sql');
 
 conn = db_connect.getConnection();
 
-let name = '고죠';
-let price = 30000;
-let imganme = 'a6.jpg';
+let name = 'example_name';
+let price = 100;
+let imganme = 'example_imganme';
 
 let values = [name,price,imganme];
 

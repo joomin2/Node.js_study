@@ -3,7 +3,7 @@ var db_sql = require('../db/db_sql');
 
 conn = db_connect.getConnection();
 
-let id = '1';
+let id = 'example_id';
 
 conn.query(db_sql.item_select_one, id, (err, result, fields) => {
 

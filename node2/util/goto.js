@@ -9,7 +9,6 @@ module.exports = {
         if (loginid != undefined) {
             if (obj != undefined) {
                 obj.loginid = loginid;
-                // {,'loginid':loginid}
                 res.render('index', obj);
             } else {
                 //로그인이 성공적으로 되었을 경우 

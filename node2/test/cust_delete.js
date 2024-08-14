@@ -6,12 +6,11 @@ var db_sql = require('../db/db_sql');
 conn = db_connect.getConnection();
 
 // 삭제할 고객의 ID 설정
-let id = 'id01';
+let id = 'example_id';
 
 // SQL 구문이 제대로 로드되었는지 확인
-console.log("SQL Query:", db_sql.cust_delete);  // db_sql.cust_delete_one 값 확인
+//console.log("SQL Query:", db_sql.cust_delete);  
 
-// 데이터베이스 쿼리 실행
 conn.query(db_sql.cust_delete, [id], (err, result) => {
     if (err) {
         console.log('Delete Error');

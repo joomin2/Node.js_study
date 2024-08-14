@@ -2,17 +2,18 @@ var db_connect = require('../db/db_connect');
 var db_sql = require('../db/db_sql');
 
 conn = db_connect.getConnection();
-let id = 'id05';
-let pwd = 'pwd444';
-let name = '박주민';
-let acc = '9999999';
-let values = [pwd,name,acc,id];
+
+let id = 'example_id';
+let pwd = 'example_pw';
+let name = 'example_name';
+let acc = 'example_acc';;
+let values = [pwd, name, acc, id];
 
 conn.query(db_sql.cust_update, values, (e, result, fields) => {
-    if(e){
+    if (e) {
         console.log('Update Error');
-        console.log('Error Message:')+e;
-    }else{
+        console.log('Error Message:') + e;
+    } else {
         console.log('Update OK !');
     }
     db_connect.close(conn);

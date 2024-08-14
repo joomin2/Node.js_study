@@ -2,10 +2,11 @@ var db_connect = require('../db/db_connect');
 var db_sql = require('../db/db_sql');
 
 conn = db_connect.getConnection();
-let id = '12';
-let name = '고죠 사토루';
-let price = 99999;
-let imgname = 'a6.jpg';
+let id = 'example_id';
+let name = 'example_name';
+let price = 100;
+let imgname = 'example_imgname';
+
 let values = [name,price,imgname,id];
 
 conn.query(db_sql.item_update, values, (e, result, fields) => {

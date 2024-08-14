@@ -3,16 +3,15 @@ var db_sql = require('../db/db_sql');
 
 conn = db_connect.getConnection();
 
-let id = 'id01';
+let id = 'example_id';
 
-conn.query(db_sql.cart_select_one, id, (err, result, fields) => {
+conn.query(db_sql.cart_select_one, id, (e, result, fields) => {
     try {
         if (e) {
             console.log('Select Error');
             throw e;
         } else {
             console.log(result);
-            //console.log(JSON.stringify(result));
         }
     } catch (e) {
         console.log(e);

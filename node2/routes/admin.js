@@ -1,3 +1,4 @@
+// /admin 라우터 호출 동작 코드 파일
 const express = require('express');
 const app = express();
 const router = express.Router();

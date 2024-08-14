@@ -3,7 +3,7 @@ var db_sql = require('../db/db_sql');
 
 conn = db_connect.getConnection();
 
-let id = 'id01';
+let id = 'example_id';
 
 conn.query(db_sql.cust_select_one, id, (err, result, fields) => {
     if(err){
@@ -11,7 +11,6 @@ conn.query(db_sql.cust_select_one, id, (err, result, fields) => {
         console.log('Error Message:')+e;
     }else{
         console.log(result);
-        console.log(JSON.stringify(result));
     }
     db_connect.close(conn);
 
