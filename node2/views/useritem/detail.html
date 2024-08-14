@@ -22,9 +22,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/useritem">Select</a>
                     </li>
-                    {% if loginid %}
+                    {% if loginid and loginid != 'admin' %}
                     <li class="nav-item">
-                        <a class="nav-link" href="/useritem/cart">Cart</a>
+                        <a class="nav-link" href="/useritem/cart?userid={{loginid}}">Cart</a>
+                    </li>
+                    {% elif loginid and loginid == 'admin' %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/useritem/admincart">Cart</a>
                     </li>
                     {% endif %}
                 </ul>

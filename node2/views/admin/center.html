@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Cart Detail</title>
+    <style>
+        .bg-success,
+        .bg-warning {
+            padding: 15px;
+        }
+        #item_img{
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="margin-top:30px">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Admin Cart Center</h2>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>User ID</th>
+                        <th>Item ID</th>
+                        <th>Item Name</th>
+                        <th>Item Price</th>
+                        <th>Count</th>
+                        <th>Total Price</th>
+                        <th>RegDate</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in carts %}
+                    <tr>
+                        <td>{{c.id}}</td>
+                        <td>{{c.userid}}</td>
+                        <td><a href="/useritem/detail?id={{c.itemid}}">{{c.itemid}}</a></td>
+                        <td>{{c.itemname}}</td>
+                        <td>{{c.itemprice}}</td>
+                        <td>{{c.count}}</td>
+                        <td>{{c.totalprice}}</td>
+                        <td>{{c.regdate}}</td>
+                        <td>
+                            <form action="/admin/delete/{{c.id}}" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

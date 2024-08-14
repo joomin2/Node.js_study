@@ -85,18 +85,27 @@
           <a class="nav-link" href="/Geo">Geo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="chart">Chart</a>
+          <a class="nav-link" href="/chart">Chart</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="useritem">Item</a>
+          <a class="nav-link" href="/useritem">Item</a>
         </li>
+        {% if loginid and loginid != 'admin' %}
+        <li class="nav-item">
+          <a class="nav-link" href="/useritem/cart">Cart</a>
+        </li>
+        {% endif %}
         {% if loginid == 'admin' %}
         <li class="nav-item">
-          <a class="nav-link" href="cust">Cust Mgt</a>
+          <a class="nav-link" href="/cust">Cust Mgt</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="item">Item Mgt</a>
+          <a class="nav-link" href="/admin">Cart Mgt</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/item">Item Mgt</a>
+        </li>
+       
       </ul>
       {% endif %}
     </div>

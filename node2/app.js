@@ -210,6 +210,9 @@ app.use('/item', item);
 
 const useritem = require('./routes/useritem');
 app.use('/useritem', useritem);
+
+const admin = require('./routes/admin');
+app.use('/admin', admin);
 //--------------------------------------------------------------------------------
 //--------------- server start--------------------------------------
 

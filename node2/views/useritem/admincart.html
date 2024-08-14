@@ -31,17 +31,13 @@
           </li>
           {% if loginid %}
           <li class="nav-item">
-            <a class="nav-link" href="/useritem/cart">Cart</a>
-          </li>
-          {% elif loginid == 'admin' %}
-          <li class="nav-item">
             <a class="nav-link" href="/useritem/admincart">Cart</a>
           </li>
           {% endif %}
         </ul>
       </div>
       <div class="col-sm-9">
-        <h2>Cart Page</h2>
+        <h2>(admin) Cart Page</h2>
         <table class="table">
           <thead>
             <tr>
@@ -60,7 +56,7 @@
               <td>{{ i.id }}</td>
               <td>{{ i.itemid }}</td>
               <td>
-                <a href="/useritem/detail?id={{ i.id }}">{{ i.itemname }}</a>
+                <a href="/useritem/detail">{{ i.itemname }}</a>
               </td>
               <td>{{ i.itemprice }}</td>
               <td>{{ i.count }}</td>

@@ -1,25 +1,48 @@
 var db_connect = require('../db/db_connect');
 var db_sql = require('../db/db_sql');
 
-
 conn = db_connect.getConnection();
-//db_connect안에 있는getConnection()메서드(함수) 사용
-let userid = 'id01';
-let itemid= '10';
-let itemname = '바지4';
-let itemprice = '50000';
-let count = 1;
-let totalprice = itemprice*count;  
 
 
-let values = [userid,itemid,itemname,itemprice,count,totalprice];
-//db_sql.cart_insert, values 이걸 집어넣으면 (e, result, fields) 이CD것이 실행 )  
-conn.query(db_sql.cart_insert, values, (e, result, fields) => {
-    if(e){
-        console.log('Insert Error');
+
+let id = 'id99';
+let itemid = '11';
+let count = '1';
+
+
+
+
+let values = [itemid];
+
+conn.query(db_sql.item_select_one, values, (e, result, fields) => {
+    try {
+        if (e) {
+            console.log('Select_one Error');
+            throw e;
+        } else {
+            console.log(result[0]);
+            console.log(result[0].name);
+            console.log(result[0].price);
+            console.log(result[0].price * count);
+
+            let values = [id, itemid, result[0].name, result[0].price, count, result[0].price * count];
+
+            conn.query(db_sql.cart_insert, values, (e, result, fields) => {
+                try {
+                    if (e) {
+                        console.log('Insert Error');
+                        throw e;
+                    } else {
+                        console.log('Insert OK !');
+                    }
+                } catch (e) {
+                    console.log(e);
+                }
+            });
+        }
+    } catch (e) {
         console.log(e);
-    }else{
-        console.log('Insert OK !');
+    } finally {
+        db_connect.close(conn);
     }
-    db_connect.close(conn);
 });
