@@ -1,25 +1,52 @@
-<div class="container" style="margin-top:30px">
-    <div class="row">
-        <div class="col-sm-3">
-            <ul class="nav nav-pills flex-column">   
-              <li class="nav-item">
-                <a class="nav-link" href="/item/item1">item1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/item/item2">item2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/item/item3">item3</a>
-              </li>
-            </ul>
-        </div>
-        <div class="col-sm-9">
-            <h2>Item CENTER 이것은 지디오 폴더의 ITEM html</h2>
-            
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* CSS 스타일 추가 */
+        .nav-pills .nav-link {
+            border-radius: 0; /* 경계선 둥글기 제거 */
+            margin-bottom: 1px; /* 링크 간격 */
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: #007bff; /* 활성 링크 색상 */
+            color: white; /* 활성 링크 텍스트 색상 */
+        }
+
+        .nav-pills .nav-link:hover {
+            background-color: #0056b3; /* 호버 색상 */
+            color: white; /* 호버 텍스트 색상 */
+        }
+        
+        .container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/item/item1">item1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/item/item2">item2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/item/item3">item3</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <h2>Item CENTER 이것은 지디오 폴더의 ITEM html</h2>
+            </div>
         </div>
     </div>
-  </div>
-  
-  
-  
-  
+</body>
+</html>

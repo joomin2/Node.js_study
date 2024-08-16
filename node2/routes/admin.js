@@ -34,6 +34,31 @@ router
             }
             db_connect.close(conn);
         });
+    })
+
+    .post('/delete/:id', (req, res) => {
+        const cartId = req.params.id;
+        const conn = db_connect.getConnection();
+        conn.query(db_sql.cart_delete, [cartId], (err, result) => {
+            if (err) {
+                console.log('Delete Error:', err);
+            } else {
+                res.redirect('/admin');
+            }
+            db_connect.close(conn);
+        });
+    })
+    .post('/delete2/:id', (req, res) => {
+        const itemId = req.params.id;
+        const conn = db_connect.getConnection();
+        conn.query(db_sql.item_delete, [itemId], (err, result) => {
+            if (err) {
+                console.log('Delete Error:', err);
+            } else {
+                res.redirect('/item/item1');
+            }
+            db_connect.close(conn);
+        });
     });
 
 module.exports = router;
